@@ -16,6 +16,10 @@ export default class Store {
 		return this.todos.filter(todo => todo.completed).length
 	}
 
+	get countOfTasks() {
+		return this.todos.length
+	}
+
 	completeTodo(id) {
 		const todo = this.todos.find(item => item.id === id)
 		todo.completed = !todo.completed
