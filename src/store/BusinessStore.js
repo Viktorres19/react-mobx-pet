@@ -2,7 +2,7 @@ import { makeAutoObservable, reaction, toJS } from 'mobx'
 
 export default class Store {
 	todos = []
-	name = 'Name'
+	name = 'Todo manager'
 
 	constructor() {
 		makeAutoObservable(this, {}, {autoBind: true})
@@ -31,5 +31,9 @@ export default class Store {
 			completed: false,
 			id: Date.now()
 		})
+	}
+
+	removeTodo(id) {
+		this.todos = this.todos.filter(todo => todo.id !== id)
 	}
 }
