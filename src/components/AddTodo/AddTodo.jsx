@@ -18,6 +18,7 @@ export const AddTodo = observer(() => {
 				type={'text'}
 				onChange={e => setData(e.target.value)}
 				value={data}
+				placeholder="anything..."
 			/>
 			<button type={'submit'}>Add Todo</button>
 		</StyledAddTodo>

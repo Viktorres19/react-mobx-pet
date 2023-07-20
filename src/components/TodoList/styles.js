@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const UnorderedList = styled.ul`
 	padding: 0;
 	list-style-type: none;
+	margin: 30px 0 0;
 `
 
 export const ListItem = styled.li`
@@ -12,6 +13,9 @@ export const ListItem = styled.li`
 	background-color: #f4f2ff;
 	border-radius: 10px;
 	padding: 20px;
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
 	& span {
 		flex-grow: 2;
 		box-sizing: border-box;
@@ -53,7 +57,7 @@ export const ListItem = styled.li`
 		background-color: #e42c5f;
 		color: #f4f2ff;
 		font-weight: 700;
-		border-radius: 8px;
+		border-radius: 10px;
 		border: 1px solid transparent;
 		padding: 15px;
 		font-size: 1em;
