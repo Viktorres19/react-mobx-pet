@@ -1,20 +1,24 @@
-import './App.css'
-
 import { observer } from 'mobx-react-lite'
-import { TodoList } from './TodoList'
-import { AddTodo } from './AddTodo'
-import { Header } from './header'
-import store from './store'
+import Header from './components/Header/Header'
+import { Counter } from './components/Counter/Counter'
+import { AddTodo } from './components/AddTodo/AddTodo.jsx'
+import { TodoList } from './components/TodoList/TodoList'
+import styled from 'styled-components'
+
+const StyledApp = styled.div`
+  background-color: #d5ccff;
+  padding: 15px;
+  border-radius: 10px;
+`
 
 const App = observer(() => {
-  const { name } = store.business
   return (
-    <div className="App">
-      <h1>{ name }</h1>
+    <StyledApp>
       <Header />
+      <Counter />
       <AddTodo />
       <TodoList />
-    </div>
+    </StyledApp>
   )
 })
 

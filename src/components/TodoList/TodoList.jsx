@@ -1,12 +1,14 @@
 import { observer } from 'mobx-react-lite'
-import store from './store'
+import store from '../../store/index.js'
+import {UnorderedList} from './styles.js'
+
 export const TodoList = observer(() => {
 	const { todos, completeTodo, removeTodo } = store.business
 	if (!todos.length) {
 		return <h2>You don`t have tasks for now</h2>
 	}
 	return (
-		<ul>
+		<UnorderedList>
 			{todos.map(todo => (
 				<li key={todo.id}>
 					<input
@@ -18,6 +20,6 @@ export const TodoList = observer(() => {
 					<button onClick={() => removeTodo(todo.id)}>X</button>
 				</li>
 			))}
-		</ul>
+		</UnorderedList>
 	)
 })
