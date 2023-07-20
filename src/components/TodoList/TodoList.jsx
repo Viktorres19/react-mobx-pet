@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import store from '../../store/index.js'
-import {UnorderedList} from './styles.js'
+import { UnorderedList, ListItem } from './styles.js'
 
 export const TodoList = observer(() => {
 	const { todos, completeTodo, removeTodo } = store.business
@@ -10,7 +10,7 @@ export const TodoList = observer(() => {
 	return (
 		<UnorderedList>
 			{todos.map(todo => (
-				<li key={todo.id}>
+				<ListItem key={todo.id}>
 					<input
 						onChange={() => completeTodo(todo.id)}
 						type="checkbox"
@@ -18,7 +18,7 @@ export const TodoList = observer(() => {
 					/>
 					<span>{todo.title}</span>
 					<button onClick={() => removeTodo(todo.id)}>X</button>
-				</li>
+				</ListItem>
 			))}
 		</UnorderedList>
 	)
