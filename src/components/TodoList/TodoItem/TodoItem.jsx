@@ -9,7 +9,6 @@ const TodoItem = ({todo}) => {
 			<input
 				onChange={() => completeTodo(todo.id)}
 				type="checkbox"
-				checked={todo.completed}
 			/>
 			<span>{todo.title}</span>
 			<Button onClick={() => removeTodo(todo.id)} bg='#e42c5f' color='#f4f2ff'>
