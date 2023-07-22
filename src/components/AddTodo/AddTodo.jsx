@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite'
 import store from '../../store/index.js'
 import { useState } from 'react'
 import {StyledAddTodo} from './styles.js'
+import {Button} from "../styles/Button.styled.js";
 
 export const AddTodo = observer(() => {
 	const [data, setData] = useState('')
@@ -20,7 +21,9 @@ export const AddTodo = observer(() => {
 				value={data}
 				placeholder="anything..."
 			/>
-			<button type={'submit'}>Add Todo</button>
+			<Button type={'submit'} bg='#2b1887'>
+				Add Todo
+			</Button>
 		</StyledAddTodo>
 	)
 })

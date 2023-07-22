@@ -1,5 +1,6 @@
 import store from '../../../store/index.js'
 import { StyledTodoItem } from './styles.js'
+import { Button } from '../../styles/Button.styled.js'
 
 const TodoItem = ({todo}) => {
 	const { completeTodo, removeTodo } = store.business
@@ -11,7 +12,9 @@ const TodoItem = ({todo}) => {
 				checked={todo.completed}
 			/>
 			<span>{todo.title}</span>
-			<button onClick={() => removeTodo(todo.id)}>X</button>
+			<Button onClick={() => removeTodo(todo.id)} bg='#e42c5f' color='#f4f2ff'>
+				X
+			</Button>
 		</StyledTodoItem>
 	);
 };
