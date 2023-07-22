@@ -10,8 +10,10 @@ export const AddTodo = observer(() => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		addTodo(data)
-		setData('')
+		if (data) {
+			addTodo(data)
+			setData('')
+		}
 	}
 	return (
 		<StyledAddTodo onSubmit={onSubmit}>

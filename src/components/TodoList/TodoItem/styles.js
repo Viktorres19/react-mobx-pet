@@ -10,7 +10,7 @@ export const StyledTodoItem = styled.li`
 	&:not(:last-child) {
 		margin-bottom: 10px;
 	}
-	& span {
+	& > span {
 		flex-grow: 2;
 		box-sizing: border-box;
 		padding: 0 10px;
