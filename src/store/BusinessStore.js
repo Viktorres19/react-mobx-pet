@@ -3,6 +3,8 @@ import { makeAutoObservable, reaction, toJS } from 'mobx'
 export default class Store {
 	todos = []
 	name = 'Todo manager'
+	addTodoText = 'Add Todo'
+	deleteTodoText = 'x'
 
 	constructor() {
 		makeAutoObservable(this, {}, {autoBind: true})
