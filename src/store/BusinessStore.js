@@ -27,11 +27,25 @@ export default class Store {
 		todo.completed = !todo.completed
 	}
 
+	startEditTodo(id) {
+		const todo = this.todos.find(item => item.id === id)
+		return todo.isEditing = true
+	}
+
+	finishEditTodo(id, data) {
+		const todo = this.todos.find(item => item.id === id)
+		return (
+			todo.isEditing = false,
+			todo.title = data
+		)
+	}
+
 	addTodo(task) {
 		this.todos.push({
 			title: task,
 			completed: false,
-			id: Date.now()
+			id: Date.now(),
+			isEditing: false
 		})
 	}
 
