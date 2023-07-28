@@ -1,27 +1,22 @@
-import { observer } from 'mobx-react-lite'
-import { Counter } from './components/Counter/Counter'
-import { AddTodo } from './components/AddTodo/AddTodo.jsx'
-import { TodoList } from './components/TodoList/TodoList'
 import styled from 'styled-components'
-import { HeadingOne } from './components/styles/HeadingOne.styled.js'
-import store from './store/index.js'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routing'
 
 const StyledApp = styled.div`
   background-color: #d5ccff;
   padding: 15px;
   border-radius: 10px;
+  min-height: 100px;
+  min-width: 470px;
+  box-sizing: border-box;
 `
 
-const App = observer(() => {
-  const { name } = store.business
+const App = () => {
   return (
     <StyledApp>
-      <HeadingOne>{ name }</HeadingOne>
-      <Counter />
-      <AddTodo />
-      <TodoList />
+      <RouterProvider router={router} />
     </StyledApp>
   )
-})
+}
 
 export default App
